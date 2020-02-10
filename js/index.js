@@ -42,20 +42,44 @@ const siteContent = {
 	}
 };
 
-// Example: Update the img src for the logo
 let logo = document.getElementById('logo-img');
+let navItems = document.querySelectorAll('nav a');
+let ctaText = document.querySelector('.cta-text h1');
+let ctaImg = document.getElementById('cta-img');
+let ctaBtn = document.querySelector('.cta-text button');
+let textTitle = document.querySelectorAll('.text-content h4');
+let textP = document.querySelectorAll('.text-content p');
+let mainContentImg = document.getElementById('middle-img');
+
+// LOGO INSIDE OF NAV
 logo.setAttribute('src', siteContent['nav']['img-src']);
 
-let navItems = document.querySelectorAll('nav a');
+// NAV ITEMS
 for (let i = 0; i < navItems.length; i++) {
 	navItems[i].innerHTML = `${siteContent.nav['nav-item-' + (i + 1)]}`;
 }
 
-let ctaText = document.querySelector('.cta-text h1');
+// CTA HEADING + BUTTON + IMAGE
 ctaText.textContent = siteContent.cta.h1;
-
-let ctaBtn = document.querySelector('.cta-text button');
 ctaBtn.textContent = siteContent.cta.button;
-
-let ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent.cta['img-src']);
+
+// MAIN-CONTENT
+
+// MAIN CONTENT TEXTS
+
+textTitle[0].textContent = siteContent['main-content']['features-h4'];
+textTitle[1].textContent = siteContent['main-content']['about-h4'];
+textTitle[2].textContent = siteContent['main-content']['services-h4'];
+textTitle[3].textContent = siteContent['main-content']['product-h4'];
+textTitle[4].textContent = siteContent['main-content']['vision-h4'];
+
+textP[0].textContent = siteContent['main-content']['features-content'];
+textP[1].textContent = siteContent['main-content']['about-content'];
+textP[2].textContent = siteContent['main-content']['services-content'];
+textP[3].textContent = siteContent['main-content']['product-content'];
+textP[4].textContent = siteContent['main-content']['vision-content'];
+
+// MAIN CONTENT IMAGE (middle image)
+
+mainContentImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
