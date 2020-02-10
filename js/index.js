@@ -44,20 +44,35 @@ const siteContent = {
 
 let logo = document.getElementById('logo-img');
 let navItems = document.querySelectorAll('nav a');
+let nav = document.querySelector('nav');
 let ctaText = document.querySelector('.cta-text h1');
 let ctaImg = document.getElementById('cta-img');
 let ctaBtn = document.querySelector('.cta-text button');
 let textTitle = document.querySelectorAll('.text-content h4');
 let textP = document.querySelectorAll('.text-content p');
 let mainContentImg = document.getElementById('middle-img');
+let linkOne = document.createElement('a');
+let linkTwo = document.createElement('a');
 
 // LOGO INSIDE OF NAV
 logo.setAttribute('src', siteContent['nav']['img-src']);
 
 // NAV ITEMS
+
 for (let i = 0; i < navItems.length; i++) {
 	navItems[i].innerHTML = `${siteContent.nav['nav-item-' + (i + 1)]}`;
 }
+nav.prepend(linkOne);
+nav.appendChild(linkTwo);
+linkOne.href = '#';
+linkOne.innerHTML = 'Home';
+linkTwo.href = '#';
+linkTwo.innerHTML = 'Extra';
+
+let updatedLinks = document.querySelectorAll('nav  a');
+updatedLinks.forEach(function(x) {
+	x.style.color = 'green';
+});
 
 // CTA HEADING + BUTTON + IMAGE
 ctaText.textContent = siteContent.cta.h1;
@@ -65,7 +80,6 @@ ctaBtn.textContent = siteContent.cta.button;
 ctaImg.setAttribute('src', siteContent.cta['img-src']);
 
 // MAIN-CONTENT
-
 // MAIN CONTENT TEXTS
 
 textTitle[0].textContent = siteContent['main-content']['features-h4'];
