@@ -95,3 +95,6 @@ contactContent[1].textContent = siteContent.contact.phone;
 contactContent[2].textContent = siteContent.contact.email;
 
 // FOOTER
+
+let footer = document.querySelector('footer p');
+footer.textContent = siteContent.footer.copyright;
