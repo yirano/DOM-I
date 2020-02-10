@@ -47,7 +47,15 @@ let logo = document.getElementById('logo-img');
 logo.setAttribute('src', siteContent['nav']['img-src']);
 
 let navItems = document.querySelectorAll('nav a');
-console.log(navItems);
 for (let i = 0; i < navItems.length; i++) {
 	navItems[i].innerHTML = `${siteContent.nav['nav-item-' + (i + 1)]}`;
 }
+
+let ctaText = document.querySelector('.cta-text h1');
+ctaText.textContent = siteContent.cta.h1;
+
+let ctaBtn = document.querySelector('.cta-text button');
+ctaBtn.textContent = siteContent.cta.button;
+
+let ctaImg = document.getElementById('cta-img');
+ctaImg.setAttribute('src', siteContent.cta['img-src']);
