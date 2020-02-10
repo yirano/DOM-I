@@ -83,3 +83,15 @@ textP[4].textContent = siteContent['main-content']['vision-content'];
 // MAIN CONTENT IMAGE (middle image)
 
 mainContentImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+// CONTACT
+
+let contactTitle = document.querySelector('.contact h4');
+let contactContent = document.querySelectorAll('.contact p');
+
+contactTitle.textContent = siteContent.contact['contact-h4'];
+contactContent[0].innerHTML = '123 Way 456 Street<br />Somewhere, USA';
+contactContent[1].textContent = siteContent.contact.phone;
+contactContent[2].textContent = siteContent.contact.email;
+
+// FOOTER
